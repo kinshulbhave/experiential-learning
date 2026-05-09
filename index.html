@@ -1,40 +1,247 @@
 <html>
 <head>
-<title>Alumni Portal</title>
-  <link rel="stylesheet" href="style.css">
+<title>School Alumni Portal</title>
+<style>
+body{
+font-family: Arial, sans-serif;
+background-color: #f2f2f2;
+margin: 0;
+padding: 0;
+}
+header{
+background-color: navy;
+color: white;
+text-align: center;
+padding: 20px;
+}
+.section{
+background-color: white;
+margin: 20px;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0px 2px 5px gray;
+}
+input{
+width: 90%;
+padding: 8px;
+margin-top: 5px;
+margin-bottom: 10px;
+}
+button,
+input[type="submit"]{
+padding: 10px 15px;
+background-color: navy;
+color: white;
+border: none;
+cursor: pointer;
+margin-top: 10px;
+}
+button:hover,
+input[type="submit"]:hover{
+background-color: darkred;
+        }
+
+        .gallery{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .gallery img{
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .news{
+            background-color: #e6f0ff;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        footer{
+            background-color: navy;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+    </style>
 </head>
+
 <body>
-ch1>My School Alumni Portal</h1>
-<p>Stay Connected Give Back Celebrate Memories</>
-<h2>Register as Alumni</h2>
-<form>
-Full Name: <br>
-<input type="text"><br><br>
-Email:<br>
-<input type="email"><br><br>
-Batch Year:<br>
-<input type="text"><br><br>
-<input type="submit" value="Register">
-</form>
-<hr>
-<h2>Event Gallery</h2>
-<img src="C:\Users\vip\Downloads\alumini\WPS JPG Picture file.jpg"></td>
-<img src="C:\Users\vip\Downloads\aluminil\WPS JPG Picture file.jpg"></td>
-<h2>Support Your School</h2>
-<form>
-<p>Select Amount:</p>
-<input type="radio" name="amount"> ₹500<br>
-<input type="radio" name="amount"> ₹1000<br>
-<input type="radio" name="amount"> ₹2000<br><br>
-Custom Amount:<br>
-<input type="number"><br><br>
-<input type="submit" value="Donate">
-</form
-<h2>Latest News</h2>
-<h3>Annual Meet 2026</h3>
-<p>Join us this December for a grand alumni reunion.</p>
-<h3>iew Library opened</h3>
-<p>Our school now has a modern digital library facility.</p>
-<p>e 2026 My School Alumni Association</p>
+
+    <header>
+        <h1>My School Alumni Portal</h1>
+        <p>Stay Connected • Give Back • Celebrate Memories</p>
+    </header>
+
+    <!-- Objectives Section -->
+
+    <div class="section">
+
+        <h2>Objectives</h2>
+
+        <ul>
+            <li>To connect alumni with the school community.</li>
+            <li>To provide online alumni registration.</li>
+            <li>To display event galleries and memories.</li>
+            <li>To collect donations for school development.</li>
+            <li>To share latest news and updates.</li>
+        </ul>
+
+    </div>
+
+    <!-- Registration Section -->
+
+    <div class="section">
+
+        <h2>Register as Alumni</h2>
+
+        <form onsubmit="registerAlumni(event)">
+
+            Full Name:<br>
+            <input type="text" id="name" required><br>
+
+            Email:<br>
+            <input type="email" id="email" required><br>
+
+            Batch Year:<br>
+            <input type="number" id="batch" required><br>
+
+            <input type="submit" value="Register">
+
+        </form>
+
+        <p id="message"></p>
+
+    </div>
+
+    <!-- Gallery Section -->
+
+    <div class="section">
+
+        <h2>Event Gallery</h2>
+
+        <div class="gallery">
+
+            <img src="C:\Users\vip\Downloads\alumini\WPS JPG Picture file.jpg" alt="Alumni Event">
+
+            <img src="C:\Users\vip\Downloads\aluminil\WPS JPG Picture file.jpg" alt="School Event">
+
+            <img src="https://via.placeholder.com/300x180?text=Annual+Meet" alt="Annual Meet">
+
+            <img src="https://via.placeholder.com/300x180?text=Sports+Day" alt="Sports Day">
+
+            <img src="https://via.placeholder.com/300x180?text=Cultural+Event" alt="Cultural Event">
+
+            <img src="https://via.placeholder.com/300x180?text=Farewell" alt="Farewell">
+
+        </div>
+
+    </div>
+
+    <!-- Donation Section -->
+
+    <div class="section">
+
+        <h2>Support Your School</h2>
+
+        <form>
+
+            <p>Select Amount:</p>
+
+            <input type="radio" name="amount" onclick="donate(500)"> ₹500<br>
+
+            <input type="radio" name="amount" onclick="donate(1000)"> ₹1000<br>
+
+            <input type="radio" name="amount" onclick="donate(2000)"> ₹2000<br><br>
+
+            Custom Amount:<br>
+            <input type="number" id="customAmount"><br>
+
+            <button type="button" onclick="customDonate()">
+                Donate
+            </button>
+
+        </form>
+
+        <p id="donationMessage"></p>
+
+    </div>
+
+    <!-- News Feed Section -->
+
+    <div class="section">
+
+        <h2>Latest News Feed</h2>
+
+        <div class="news">
+            <h3>Annual Meet 2026</h3>
+            <p>Join us this December for a grand alumni reunion.</p>
+        </div>
+
+        <div class="news">
+            <h3>New Library Opened</h3>
+            <p>Our school now has a modern digital library facility.</p>
+        </div>
+
+        <div class="news">
+            <h3>Scholarship Program</h3>
+            <p>New scholarship fund launched with alumni support.</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© 2026 My School Alumni Association</p>
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function registerAlumni(event)
+        {
+            event.preventDefault();
+
+            var studentName =
+            document.getElementById("name").value;
+
+            document.getElementById("message").innerHTML =
+            "Thank You " + studentName +
+            " for registering in Alumni Portal!";
+        }
+
+        function donate(amount)
+        {
+            document.getElementById("donationMessage").innerHTML =
+            "Thank you for donating ₹" + amount;
+        }
+
+        function customDonate()
+        {
+            var amount =
+            document.getElementById("customAmount").value;
+
+            if(amount == "")
+            {
+                alert("Please enter donation amount");
+            }
+            else
+            {
+                document.getElementById("donationMessage").innerHTML =
+                "Thank you for donating ₹" + amount;
+            }
+        }
+
+    </script>
+
 </body>
 </html>

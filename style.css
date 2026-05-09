@@ -1,0 +1,144 @@
+<html>
+<head>
+<title>School Alumni Portal</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ margin: 0;
+ background-color: #f4f6f8;
+ }
+ header {
+  background-color: #2d6a8e
+  color: white;
+   padding: 15px;
+  text-align: center;
+   }
+
+   nav {
+   background-color: #1b4965;
+   padding: 10px;
+   text-align: center;
+   }
+
+  nav a {
+   color: white;
+  margin: 0 15px;
+ text-decoration: none;
+   }
+
+.container {
+  display: flex;
+ flex-wrap: wrap;
+ padding: 20px;
+  }
+ .section {
+   background: white;
+   padding: 15px;
+   margin: 10px;
+   border-radius: 5px;
+   flex: 1;
+   min-width: 280px;
+   }
+<div>
+.gallery {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+        }
+.gallery div {
+  background-color: #ddd;
+   height: 80px;
+        }
+<div>
+.donate-buttons button {
+ margin: 5px;
+ padding: 8px 12px;
+ border: none;
+ background-color: #2d6a8e;
+ color: white;
+ cursor: pointer;
+        }
+
+.donate-buttons button:hover {
+  background-color: #1b4965;
+   }
+
+input[type="text"] {
+ width: 90%;
+ padding: 8px;
+ margin-top: 10px;
+        }
+
+ footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #1b4965;
+  color: white;
+  margin-top: 20px;
+        }
+</style>
+</head>
+
+<body>
+
+<header>
+ <h1>School Alumni Portal</h1>
+ <p>Stay Connected. Give Back.</p>
+</header>
+
+<nav>
+ <a href="#">Home</a>
+ <a href="#">Register</a>
+ <a href="#">Events</a>
+ <a href="#">Donate</a>
+</nav>
+
+<div class="container">
+<br>
+ <div class="section">
+  <h3>Register</h3>
+  <p>Join our alumni network.</p>
+ <input type="text" placeholder="Enter your name"><br>
+ <input type="text" placeholder="Batch / Year"><br>
+ <button>Submit</button>
+ </div>
+<div>
+<div class="section">
+<h3>Event Gallery</h3>
+ <div class="gallery">
+ <div></div>
+<div></div>
+ <div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+</div>
+<div class="section">
+ <h3>Donate</h3>
+<p>Support your school.</p>
+<div class="donate-buttons">
+<button>₹500</button>
+<button>₹1000</button>
+<button>₹2000</button>
+ </div>
+<input type="text" placeholder="Custom Amount">
+<br><br>
+<button>Donate Now</button>
+</div>
+<div>
+<div class="section">
+<h3>News Feed</h3>
+<p>• Annual alumni meet in June</p>
+<p>• New library inaugurated</p>
+<p>• Sports day highlights uploaded</p>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 School Alumni Association</p>
+</footer>
+
+</body>
+</html>
